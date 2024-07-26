@@ -1,0 +1,22 @@
+
+def create_matrix(rows, cols):
+    matrix = []
+    print(f"Enter the elements row-wise for a {rows}x{cols} matrix:")
+    for i in range(rows):
+        row = []
+        for j in range(cols):
+            element = int(input(f"Enter element ({i+1},{j+1}): "))
+            row.append(element)
+        matrix.append(row)
+    return matrix
+def display_matrix(matrix):
+    for row in matrix:
+        print(" ".join(map(str, row)))
+if __name__ == "__main__":
+    rows = int(input("Enter the number of rows: "))
+    cols = int(input("Enter the number of columns: "))
+    
+    matrix = create_matrix(rows, cols)
+    
+    print("\nThe created matrix is:")
+    display_matrix(matrix)
