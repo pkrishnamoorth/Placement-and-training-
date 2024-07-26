@@ -1,0 +1,13 @@
+
+def print_positive_numbers(numbers):
+    print("Positive numbers in the list are:")
+    for number in numbers:
+        if number > 0:
+            print(number)
+
+if __name__ == "__main__":
+    
+    numbers = list(map(int, input("Enter numbers separated by space: ").split()))
+    
+    
+    print_positive_numbers(numbers)
