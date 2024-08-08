@@ -1,4 +1,4 @@
-1.Password Validation
+#1.Password Validation
 import re
 
 def validate_password(password):
@@ -18,7 +18,7 @@ passwords = ["Password123", "Pass123", "password", "PASSWORD123", "Pass@123"]
 for pwd in passwords:
     print(f"Password: {pwd}, Validation: {validate_password(pwd)}")
 
-2.
+#2.
 Alphabet Pattern 'D'
 for row in range(7):
     if row == 0 or row == 6:
