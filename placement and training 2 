@@ -1,12 +1,15 @@
 
-a = int(input("Enter the first number (non-zero for True, zero for False): "))
-b = int(input("Enter the second number (non-zero for True, zero for False): "))
+numbers = input("Enter two integers separated by space: ").split()
 
-bool_a = bool(a)
-bool_b = bool(b)
+a = int(numbers[0])
+b = int(numbers[1])
 
-print("\nLogical Operations Results:")
-print(f"{bool_a} AND {bool_b} = {bool_a and bool_b}")
-print(f"{bool_a} OR {bool_b} = {bool_a or bool_b}")
-print(f"NOT {bool_a} = {not bool_a}")
-print(f"NOT {bool_b} = {not bool_b}")
+
+result = a + b
+
+
+print(result)} = {not bool_b}")
+
+
+
+//2
