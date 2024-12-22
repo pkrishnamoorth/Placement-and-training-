@@ -12,4 +12,28 @@ print(result)} = {not bool_b}")
 
 
 
-//2
+# 2.
+
+num = int(input("Enter an integer: "))
+
+
+if num % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+
+
+# 3
+
+n = int(input("Enter an integer: "))
+
+
+if n > 1:
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            print("Not Prime")
+            break
+    else:
+        print("Prime")
+else:
+    print("Not Prime")
