@@ -1,0 +1,144 @@
+1.Fibonacci 
+More actions
+public class Fibonacci {
+    public static void main(String[] args) {
+        int n = 10, a = 0, b = 1, c;
+        System.out.print(a + " " + b);
+        for (int i = 2; i < n; i++) {
+            c = a + b;
+            System.out.print(" " + c);
+            a = b;
+            b = c;
+        }
+    }
+}
+
+2.Prime number
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        int num = 29, flag = 0;
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0)
+            System.out.println(num + " is a prime number.");
+        else
+            System.out.println(num + " is not a prime number.");
+    }
+}
+
+3.Even or Odd
+
+import java.util.Scanner;
+public class EvenOdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        if(num % 2 == 0)
+            System.out.println("Even");
+        else
+            System.out.println("Odd");
+    }
+}
+
+
+4.Factorial number
+
+public class Factorial {
+    public static void main(String[] args) {
+        int num = 5, fact = 1;
+        for (int i = 1; i <= num; i++)
+            fact *= i;
+        System.out.println("Factorial: " + fact);
+    }
+}
+
+
+5.Prime number
+
+public class PrimeCheck {
+    public static void main(String[] args) {
+        int num = 29;
+        boolean prime = true;
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                prime = false;
+                break;
+            }
+        }
+        System.out.println(num + " is " + (prime ? "Prime" : "Not Prime"));
+    }
+}
+
+
+6.Palindrome
+
+public class Palindrome {
+    public static void main(String[] args) {
+        int num = 121, rev = 0, original = num;
+        while (num != 0) {
+            rev = rev * 10 + num % 10;
+            num /= 10;
+        }
+        System.out.println(original + (original == rev ? " is a Palindrome" : " is Not a Palindrome"));
+    }
+}
+
+
+7.Reverse a String
+
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "Java";
+        String rev = "";
+        for (int i = str.length() - 1; i >= 0; i--)
+            rev += str.charAt(i);
+        System.out.println("Reversed: " + rev);
+    }
+}
+
+
+8.Sum of digits
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+        int num = 1234, sum = 0;
+        while (num != 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        System.out.println("Sum of digits: " + sum);
+    }
+}
+
+
+9.Armstrong number
+
+public class Armstrong {
+    public static void main(String[] args) {
+        int num = 153, sum = 0, temp = num;
+        while (temp != 0) {
+            int digit = temp % 10;
+            sum += digit * digit * digit;
+            temp /= 10;
+        }
+        System.out.println(num + (num == sum ? " is Armstrong" : " is Not Armstrong"));
+    }
+}
+
+
+10.Swap two numbers
+
+public class Swap {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        int temp = a;
+        a = b;
+        b = temp;
+        System.out.println("a = " + a + ", b = " + b);
+    }
+}
