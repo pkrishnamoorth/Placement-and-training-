@@ -1,0 +1,21 @@
+1.Collections.sort(employeeList, new SalaryComparator());
+
+2.class Account { ... }
+class SavingsAccount extends Account { ... }
+
+3.FileReader fr = new FileReader("source.txt");
+FileWriter fw = new FileWriter("dest.txt");
+
+4.class Student {
+    int roll;
+    String name;
+    double marks;
+    // constructor, getters, setters
+}
+
+5.try {
+    switch (operator) {
+        case '+': result = a + b; break;
+        ...
+    }
+} catch (ArithmeticException e) { ... }
