@@ -1,0 +1,195 @@
+1.import java.util.Scanner;
+
+public class QuizApp {
+    public static void main(String[] args) {
+        String[] questions = {
+            "1. What is the capital of France?\nA. Rome  B. Paris  C. Berlin  D. Madrid",
+            "2. What is 5 + 3?\nA. 6  B. 7  C. 8  D. 9",
+            "3. Who wrote 'Romeo and Juliet'?\nA. Shakespeare  B. Dickens  C. Tolkien  D. Orwell"
+        };
+
+        char[] answers = {'B', 'C', 'A'};
+        char[] userAnswers = new char[3];
+        int score = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 0; i < questions.length; i++) {
+            System.out.println(questions[i]);
+            System.out.print("Your answer: ");
+            userAnswers[i] = Character.toUpperCase(sc.next().charAt(0));
+
+            if (userAnswers[i] == answers[i]) {
+                score++;
+            }
+        }
+
+        System.out.println("\nYou got " + score + " out of 3 correct!");
+
+        sc.close();
+    }
+}
+
+2.import java.util.Scanner;
+
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int[][] a = new int[2][2];
+        int[][] b = new int[2][2];
+        int[][] result = new int[2][2];
+
+        System.out.println("Enter elements of Matrix A (2x2):");
+        for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 2; j++)
+                a[i][j] = sc.nextInt();
+
+        System.out.println("Enter elements of Matrix B (2x2):");
+        for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 2; j++)
+                b[i][j] = sc.nextInt();
+
+        // Multiply
+        for (int i = 0; i < 2; i++)
+            for (int j = 0; j < 2; j++)
+                for (int k = 0; k < 2; k++)
+                    result[i][j] += a[i][k] * b[k][j];
+
+        System.out.println("Result of Multiplication:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++)
+                System.out.print(result[i][j] + " ");
+            System.out.println();
+        }
+
+        sc.close();
+    }
+}
+
+3.import java.io.*;
+
+public class WordCount {
+    public static void main(String[] args) {
+        String fileName = "sample.txt";
+        int wordCount = 0;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                String[] words = line.trim().split("\\s+");
+                wordCount += words.length;
+            }
+
+            System.out.println("Total words in file: " + wordCount);
+
+        } catch (IOException e) {
+            System.out.println("File error: " + e.getMessage());
+        }
+    }
+}
+
+4.import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double a, b, result = 0;
+        char operator;
+
+        System.out.print("Enter first number: ");
+        a = sc.nextDouble();
+
+        System.out.print("Enter operator (+ - * /): ");
+        operator = sc.next().charAt(0);
+
+        System.out.print("Enter second number: ");
+        b = sc.nextDouble();
+
+        try {
+            switch (operator) {
+                case '+': result = a + b; break;
+                case '-': result = a - b; break;
+                case '*': result = a * b; break;
+                case '/':
+                    if (b == 0) throw new ArithmeticException("Division by zero!");
+                    result = a / b; break;
+                default:
+                    System.out.println("Invalid operator!");
+                    return;
+            }
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        sc.close();
+    }
+}
+
+5.import java.util.*;
+
+class Book {
+    String title, author;
+    int id;
+
+    Book(int id, String title, String author) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+    }
+
+    public String toString() {
+        return "ID: " + id + " | Title: " + title + " | Author: " + author;
+    }
+}
+
+public class LibrarySystem {
+    static List<Book> books = new ArrayList<>();
+    static Scanner sc = new Scanner(System.in);
+
+    public static void addBook() {
+        System.out.print("Enter Book ID: ");
+        int id = sc.nextInt(); sc.nextLine();
+        System.out.print("Enter Title: ");
+        String title = sc.nextLine();
+        System.out.print("Enter Author: ");
+        String author = sc.nextLine();
+        books.add(new Book(id, title, author));
+    }
+
+    public static void searchByTitle() {
+        System.out.print("Enter Title to Search: ");
+        String title = sc.nextLine();
+        for (Book b : books) {
+            if (b.title.equalsIgnoreCase(title)) {
+                System.out.println("Found: " + b);
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
+
+    public static void displayBooks() {
+        if (books.isEmpty()) {
+            System.out.println("No books in the library.");
+        } else {
+            books.forEach(System.out::println);
+        }
+    }
+
+    public static void main(String[] args) {
+        while (true) {
+            System.out.println("\n1. Add Book  2. Search Book  3. Display All  4. Exit");
+            int choice = sc.nextInt(); sc.nextLine();
+            switch (choice) {
+                case 1: addBook(); break;
+                case 2: searchByTitle(); break;
+                case 3: displayBooks(); break;
+                case 4: return;
+                default: System.out.println("Invalid choice.");
+            }
+        }
+    }
+}
